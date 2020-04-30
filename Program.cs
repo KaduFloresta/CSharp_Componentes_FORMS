@@ -193,7 +193,7 @@ namespace Atividade_Interface
                     $"Data Nascimento:> {txt_DataNasc.Text}\n" +
                     $"C.P.F.:> {txt_CPF.Text}\n" +
                     $"Dias Devolução:> {cb_DiasDevol.Text}\n" +
-                    $"Tipo CLiente:> {(this.rb_Basic.Checked == true ? "BASIC - 5%" : this.rb_Class.Checked ? "CLASS - 10%" : "PREMIUM - 15%")}\n" +
+                    $"Tipo CLiente:> {(this.rb_Basic.Checked == true ? "BASIC - 5%" : this.rb_Class.Checked ? "CLASS - 10%" : this.rb_Class.Checked ? "PREMIUM - 15%" : "")}\n" +
                     $"NewLetter:> {(this.chk_SMS.Checked == true ? "SMS -" : "")}" +
                     $" {(this.chk_Email.Checked == true ? "E-mail -" : "")}" +
                     $" {(this.chk_WhatsApp.Checked == true ? "WhatsApp" : "")}\n",
