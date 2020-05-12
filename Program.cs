@@ -1,18 +1,17 @@
-using System.Net.Mime;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Drawing;
+using System.Net.Mime;
+using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Atividade_Interface
 {
     public class Program : System.Windows.Forms.Form
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+        
+        // The main entry point for the application.
         [STAThread]
         static void Main()
         {
@@ -38,8 +37,9 @@ namespace Atividade_Interface
             Label lbl_Tipo;
             Label lbl_NewLetter;
 
-            // Data entry boxes
+            // Data entry boxes with rich way
             RichTextBox txt_Nome;
+            // Data entry numeric system selection up/down
             NumericUpDown num_DataNascDia;
             NumericUpDown num_DataNascMes;
             NumericUpDown num_DataNascAno;
@@ -67,6 +67,7 @@ namespace Atividade_Interface
             Button button_Confirmar;
             Button button_Cancelar; 
 
+            // GUIDE FOR LOCATION n SIZE (X Y) 
             // Location (X = Horizontal - Y = Vertical)
             // Size     (X = Largura    - Y = Altura)
             public Formulario ()
@@ -145,7 +146,7 @@ namespace Atividade_Interface
                 txt_Nome.Size = new Size(300, 20);                
                 this.Controls.Add(txt_Nome);
 
-                // Numeric - Date of birth selection
+                // Numeric Up and Down - Date of birth selection
                 num_DataNascDia = new NumericUpDown();
                 num_DataNascDia.Location = new Point (150, 180);    
                 num_DataNascDia.Size = new Size(50, 20);
@@ -253,6 +254,17 @@ namespace Atividade_Interface
             }
             // Link for help
             private void linkForHelp_LinkClicked (object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
+            {
+                try
+                {
+                    VisitLink();
+                }
+                catch (Exception ex)
+                {
+                   MessageBox.Show("Unable to open link that was clicked."); 
+                }
+            }
+            private void VisitLink()
             {
                 this.link_help.LinkVisited = true;
                 System.Diagnostics.Process.Start("https://docs.microsoft.com/pt-br/dotnet/api/system.windows.forms.linklabel.linkclicked?view=netcore-3.1");
