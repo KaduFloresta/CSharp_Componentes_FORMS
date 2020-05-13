@@ -36,6 +36,9 @@ namespace Atividade_Interface
             Label lbl_DiasDevol;
             Label lbl_Tipo;
             Label lbl_NewLetter;
+            Label lbl_ListBox;
+            Label lbl_ListView;
+            Label lbl_CheckedListBox;
 
             // Data entry boxes with rich way
             RichTextBox txt_Nome;
@@ -63,13 +66,19 @@ namespace Atividade_Interface
             // Link for help
             LinkLabel link_help;
 
+            // List of movies to view
+            ListBox lb_Filmes;
+
+            // List of promotions to select
+            ListView lv_Promocoes;
+
+            // List of films to select
+            CheckedListBox clb_Pgto;
+
             // Buttons Print or Close
             Button button_Confirmar;
             Button button_Cancelar; 
 
-            // GUIDE FOR LOCATION n SIZE (X Y) 
-            // Location (X = Horizontal - Y = Vertical)
-            // Size     (X = Largura    - Y = Altura)
             public Formulario ()
             {
                 // Main window text
@@ -137,6 +146,24 @@ namespace Atividade_Interface
                 lbl_NewLetter.AutoSize = true;
                 lbl_NewLetter.Location = new Point (20, 400); 
                 this.Controls.Add(lbl_NewLetter);
+
+                lbl_ListBox = new Label();
+                lbl_ListBox.Text = "FILMES";
+                lbl_ListBox.AutoSize = true;
+                lbl_ListBox.Location = new Point (60, 500); 
+                this.Controls.Add(lbl_ListBox);
+
+                lbl_ListView = new Label();
+                lbl_ListView.Text = "DESCONTOS";
+                lbl_ListView.AutoSize = true;
+                lbl_ListView.Location = new Point (200, 500); 
+                this.Controls.Add(lbl_ListView);
+
+                lbl_CheckedListBox = new Label();
+                lbl_CheckedListBox.Text = "PAGAMENTO";
+                lbl_CheckedListBox.AutoSize = true;
+                lbl_CheckedListBox.Location = new Point (350, 500); 
+                this.Controls.Add(lbl_CheckedListBox);
 
                 // Registration entry boxes
                 txt_Nome = new RichTextBox();
@@ -235,22 +262,74 @@ namespace Atividade_Interface
                 this.Controls.AddRange(new System.Windows.Forms.Control[] { this.link_help });
                 this.Text = "Simple Link Label Example";
 
+                // ListBox
+                lb_Filmes = new ListBox();
+                lb_Filmes.Items.Add ("Gretta");
+                lb_Filmes.Items.Add ("Divinos Segredos");
+                lb_Filmes.Items.Add ("Flores de Aço");
+                lb_Filmes.Items.Add ("Olhos Famintos");
+                lb_Filmes.Items.Add ("Robocop");
+                lb_Filmes.Location = new Point (40, 520);
+                lb_Filmes.Size = new Size (100, 120);
+                lb_Filmes.SelectionMode = SelectionMode.MultiExtended;
+                lb_Filmes.MultiColumn = true;
+                this.Controls.Add(lb_Filmes);
+
+                // ListView
+                lv_Promocoes = new ListView();
+                lv_Promocoes.Location = new Point(160, 520);
+                lv_Promocoes.Size = new Size(160, 120);
+                lv_Promocoes.View = View.Details;
+                ListViewItem filme1 = new ListViewItem("5% Desc");
+                filme1.SubItems.Add("2 Filmes");
+                ListViewItem filme2 = new ListViewItem("10% Desc");
+                filme2.SubItems.Add("3 Filmes");
+                ListViewItem filme3 = new ListViewItem("15% Desc");
+                filme3.SubItems.Add("4 Filmes");
+                ListViewItem filme4 = new ListViewItem("20% Desc");
+                filme4.SubItems.Add("5 Filmes");
+                ListViewItem filme5 = new ListViewItem("25% Desc");
+                filme5.SubItems.Add("6 Filmes");
+                lv_Promocoes.Items.AddRange(new ListViewItem[]{filme1, filme2, filme3, filme4, filme5});
+                lv_Promocoes.FullRowSelect = true;
+                lv_Promocoes.GridLines = true;
+                lv_Promocoes.AllowColumnReorder = true;
+                lv_Promocoes.Sorting = SortOrder.Ascending;
+                lv_Promocoes.Columns.Add("Desconto", -2, HorizontalAlignment.Left);
+                lv_Promocoes.Columns.Add("Quantidade", -2, HorizontalAlignment.Left);
+                this.Controls.Add(lv_Promocoes);
+
+                // CheckedListBox
+                clb_Pgto = new CheckedListBox();
+                clb_Pgto.Location = new Point(340, 520);
+                clb_Pgto.Size = new Size(100, 120);
+                string[] pagtos = { "Dinheiro", "Cartão Débito", "Cartão Crédito", "Boleto", "Cheque"};
+                clb_Pgto.Items.AddRange (pagtos);
+                clb_Pgto.ItemCheck += new ItemCheckEventHandler(this.clb_Pgto_ItemCheck);
+                clb_Pgto.SelectionMode = SelectionMode.One;
+                clb_Pgto.CheckOnClick = true;
+                this.Controls.Add(clb_Pgto);
+
                 // Finishing buttons
                 button_Confirmar = new Button();
                 button_Confirmar.Text = "CONFIRMAR";
                 button_Confirmar.Size = new Size(150, 40);
-                button_Confirmar.Location = new Point(80, 510);
+                button_Confirmar.Location = new Point(80, 650);
                 button_Confirmar.Click += new EventHandler (this.button_ConfirmarClick);
                 this.Controls.Add(button_Confirmar);
 
                 button_Cancelar = new Button();
                 button_Cancelar.Text = "CANCELAR";
                 button_Cancelar.Size = new Size(150, 40);
-                button_Cancelar.Location = new Point(260, 510);
+                button_Cancelar.Location = new Point(260, 650);
                 button_Cancelar.Click += new EventHandler (this.button_CancelarClick);
                 this.Controls.Add(button_Cancelar);  
                 
-                this.Size = new Size (500, 600);
+                this.Size = new Size (500, 800);
+
+                // GUIDE FOR LOCATION n SIZE (X Y) 
+                // Location (X = Horizontal - Y = Vertical)
+                // Size     (X = Largura    - Y = Altura)
             }
             // Link for help
             private void linkForHelp_LinkClicked (object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
@@ -261,18 +340,38 @@ namespace Atividade_Interface
                 }
                 catch (Exception ex)
                 {
-                   MessageBox.Show("Unable to open link that was clicked."); 
+                   MessageBox.Show(ex.Message, "Unable to open link that was clicked."); 
                 }
             }
             private void VisitLink()
             {
                 this.link_help.LinkVisited = true;
-                System.Diagnostics.Process.Start("https://docs.microsoft.com/pt-br/dotnet/api/system.windows.forms.linklabel.linkclicked?view=netcore-3.1");
+                System.Diagnostics.Process.Start("C:\\Program Files (x86)\\Google\\Chrome\\Application\\Chrome.exe",
+                "https://docs.microsoft.com/pt-br/dotnet/api/system.windows.forms.linklabel.linkclicked?view=netcore-3.1");
             }
+
+            private void clb_Pgto_ItemCheck(object sender,ItemCheckEventArgs e)
+                {
+                    for(int i = 0; i < clb_Pgto.Items.Count; i ++)
+                        if (i != e.Index) clb_Pgto.SetItemChecked(i, false);
+                }
 
             // Confirm button - Printing of inserted data
             private void button_ConfirmarClick (object sender, EventArgs e)
             {
+                string filmes = "";
+                string promocoes = "";
+                string pagtos = "";
+
+                foreach (string filme in lb_Filmes.SelectedItems)
+                    filmes += " " + filme;
+
+                foreach (ListViewItem promocao in lv_Promocoes.SelectedItems)
+                    promocoes += " " + promocao.Text;
+
+                foreach (string pagto in clb_Pgto.CheckedItems)
+                    pagtos += " " + pagto;
+
                 MessageBox.Show (
                     $"Nome:> {txt_Nome.Text}\n" +
                     $"Data Nascimento:> {num_DataNascDia.Value + "/" + num_DataNascMes.Value + "/" +  num_DataNascAno.Value}\n" +
@@ -281,7 +380,10 @@ namespace Atividade_Interface
                     $"Tipo CLiente:> {(this.rb_Basic.Checked == true ? "BASIC - 5%" : this.rb_Class.Checked ? "CLASS - 10%" : this.rb_Premium.Checked ? "PREMIUM - 15%" : "")}\n" +
                     $"NewLetter:> {(this.chk_SMS.Checked == true ? "SMS -" : "")}" +
                     $" {(this.chk_Email.Checked == true ? "E-mail -" : "")}" +
-                    $" {(this.chk_WhatsApp.Checked == true ? "WhatsApp" : "")}\n",
+                    $" {(this.chk_WhatsApp.Checked == true ? "WhatsApp" : "")}\n" +
+                    $"Filmes:> {filmes}\n" +
+                    $"Promoção:> {promocoes}\n" +
+                    $"Forma de Pagto:> {pagtos}\n",
                     "Cliente",
                     MessageBoxButtons.OK
                 );
