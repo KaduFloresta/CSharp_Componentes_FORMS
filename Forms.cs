@@ -22,7 +22,7 @@ namespace FormsComponentes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void windowNewMenu_Click(object sender, EventArgs e)
+        private void WindowNewMenu_Click(object sender, EventArgs e)
         {
             MessageBox.Show("New!!!!");
         }
@@ -32,7 +32,7 @@ namespace FormsComponentes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void windowSaveMenu_Click(object sender, EventArgs e)
+        private void WindowSaveMenu_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Save!!!!");
         }
@@ -42,7 +42,7 @@ namespace FormsComponentes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_ConfirmarClick(object sender, EventArgs e)
+        private void Btn_ConfirmarClick(object sender, EventArgs e)
         {
             string filmes = "";
             string promocoes = "";
@@ -82,7 +82,7 @@ namespace FormsComponentes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_CancelarClick(object sender, EventArgs e)
+        private void Btn_CancelarClick(object sender, EventArgs e)
         {
             this.Close();
         }
