@@ -11,7 +11,7 @@ using System.Collections.Generic;
 namespace FormsComponentes
 {
     public class Program
-    {        
+    {
         // The main entry point for the application.
         [STAThread]
         static void Main()

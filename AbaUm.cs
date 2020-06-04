@@ -22,7 +22,7 @@ namespace FormsComponentes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void linkForHelp_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
+        private void LinkForHelp_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
         {
             try
             {

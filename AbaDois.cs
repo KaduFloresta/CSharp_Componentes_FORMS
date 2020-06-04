@@ -23,7 +23,7 @@ namespace FormsComponentes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void clb_CheckedLB_ItemCheck(object sender, ItemCheckEventArgs e)
+        private void Clb_CheckedLB_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             for (int i = 0; i < clb_CheckedLB.Items.Count; i++)
                 if (i != e.Index) clb_CheckedLB.SetItemChecked(i, false);
@@ -34,7 +34,7 @@ namespace FormsComponentes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tb_ExTrackBar_Scroll(object sender, EventArgs e)
+        private void Tb_ExTrackBar_Scroll(object sender, EventArgs e)
         { // Display the trackbar value in the text box. 
             tb_TrackBar.Text = "" + tb_ExTrackBar.Value;
         }
@@ -44,7 +44,7 @@ namespace FormsComponentes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_OpenFileClick(object sender, EventArgs e)
+        private void Btn_OpenFileClick(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
             // dialog.InitialDirectory = @"C:\";
@@ -61,7 +61,7 @@ namespace FormsComponentes
             }
         }
 
-        private void btn_TesteErro_Click(object sender, EventArgs e)
+        private void Btn_TesteErro_Click(object sender, EventArgs e)
         {
             Regex r = new Regex(@"^[a-zA-Z]+$");
             if (!r.IsMatch(this.txt_ErrorBox.Text))

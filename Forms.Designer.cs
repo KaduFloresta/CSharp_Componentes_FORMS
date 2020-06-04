@@ -49,9 +49,9 @@ namespace FormsComponentes
             // MenuStrip - Botão de Acesso ou Funções
             MenuStrip ms = new MenuStrip();
             ToolStripMenuItem windowMenu = new ToolStripMenuItem("Window");
-            ToolStripMenuItem windowNewMenu = new ToolStripMenuItem("New", null, new EventHandler(windowNewMenu_Click));
-            ToolStripMenuItem windowSaveMenu = new ToolStripMenuItem("Save", null, new EventHandler(windowSaveMenu_Click));
-            windowSaveMenu.Click += new EventHandler(windowSaveMenu_Click);
+            ToolStripMenuItem windowNewMenu = new ToolStripMenuItem("New", null, new EventHandler(WindowNewMenu_Click));
+            ToolStripMenuItem windowSaveMenu = new ToolStripMenuItem("Save", null, new EventHandler(WindowSaveMenu_Click));
+            windowSaveMenu.Click += new EventHandler(WindowSaveMenu_Click);
             ms.MdiWindowListItem = windowMenu;
             windowMenu.DropDownItems.Add(windowNewMenu);
             windowMenu.DropDownItems.Add(windowSaveMenu);
@@ -78,27 +78,27 @@ namespace FormsComponentes
             this.Controls.Add(ms);
 
             // Botões de decisões
-            btn_Confirmar = new Button();
-            btn_Confirmar.Text = "CONFIRMAR";
-            btn_Confirmar.Location = new Point(70, 580);
-            btn_Confirmar.Size = new Size(150, 40);
+            this.btn_Confirmar = new Button();
+            this.btn_Confirmar.Text = "CONFIRMAR";
+            this.btn_Confirmar.Location = new Point(70, 580);
+            this.btn_Confirmar.Size = new Size(150, 40);
             this.btn_Confirmar.BackColor = ColorTranslator.FromHtml("#4e4786");
             this.btn_Confirmar.Font = new Font(btn_Confirmar.Font, FontStyle.Bold);
             this.btn_Confirmar.ForeColor = Color.White;
-            btn_Confirmar.Click += new EventHandler(this.btn_ConfirmarClick);
+            this.btn_Confirmar.Click += new EventHandler(this.Btn_ConfirmarClick);
             this.Controls.Add(this.btn_Confirmar);
-            btn_Confirmar.Anchor = AnchorStyles.None;
+            this.btn_Confirmar.Anchor = AnchorStyles.None;
 
-            btn_Cancelar = new Button();
-            btn_Cancelar.Text = "CANCELAR";
-            btn_Cancelar.Location = new Point(260, 580);
-            btn_Cancelar.Size = new Size(150, 40);
+            this.btn_Cancelar = new Button();
+            this.btn_Cancelar.Text = "CANCELAR";
+            this.btn_Cancelar.Location = new Point(260, 580);
+            this.btn_Cancelar.Size = new Size(150, 40);
             this.btn_Cancelar.BackColor = ColorTranslator.FromHtml("#4e4786");
             this.btn_Cancelar.Font = new Font(btn_Cancelar.Font, FontStyle.Bold);
             this.btn_Cancelar.ForeColor = Color.White;
-            btn_Cancelar.Click += new EventHandler(this.btn_CancelarClick);
+            this.btn_Cancelar.Click += new EventHandler(this.Btn_CancelarClick);
             this.Controls.Add(this.btn_Cancelar);
-            btn_Cancelar.Anchor = AnchorStyles.None;
+            this.btn_Cancelar.Anchor = AnchorStyles.None;
         }
     }
 }
