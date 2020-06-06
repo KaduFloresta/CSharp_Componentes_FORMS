@@ -17,5 +17,12 @@ namespace FormsComponentes
         {
             InitializeComponent();
         }
+
+        public string GetInfo()
+        {
+            return
+                $"MonthCalendar Inicio:> {this.mc_MonthCal.SelectionRange.Start}\n" +
+                $"MonthCalendar Final:> {this.mc_MonthCal.SelectionRange.End}\n";
+        }
     }
 }

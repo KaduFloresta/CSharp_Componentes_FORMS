@@ -43,6 +43,19 @@ namespace FormsComponentes
             System.Diagnostics.Process.Start("C:\\Program Files (x86)\\Google\\Chrome\\Application\\Chrome.exe",
             "https://docs.microsoft.com/pt-br/dotnet/api/system.windows.forms.linklabel.linkclicked?view=netcore-3.1");
         }
+
+        public string GetInfo()
+        {
+            return
+                $"RichTextBox:> {rtxt_RichTB.Text}\n" +
+                $"Numerics:> {num_Numeric1.Value + "/" + num_Numeric2.Value + "/" + num_Numeric3.Value}\n" +
+                $"MaskedTextBox:> {rtxt_Masked.Text}\n" +
+                $"ComboBox:> {cb_Combo.Text}\n" +
+                $"RadioButton:> {(this.rb_RadioUm.Checked == true ? "Ítem - 1" : this.rb_RadioDois.Checked ? "Ítem - 2" : this.rb_RadioTres.Checked ? "Ítem - 3" : "")}\n" +
+                $"CheckBox:> {(this.chk_Um.Checked == true ? "SMS -" : "")}" +
+                $" {(this.chk_Dois.Checked == true ? "E-mail -" : "")}" +
+                $" {(this.chk_Tres.Checked == true ? "WhatsApp" : "")}\n";
+        }
     }
 }
 

@@ -44,35 +44,10 @@ namespace FormsComponentes
         /// <param name="e"></param>
         private void Btn_ConfirmarClick(object sender, EventArgs e)
         {
-            string filmes = "";
-            string promocoes = "";
-            string pagtos = "";
-
-            // foreach (string filme in lb_ListBox.SelectedItems)
-            //     filmes += " " + filme;
-
-            // foreach (ListViewItem promocao in lv_ListView.SelectedItems)
-            //     promocoes += " " + promocao.Text;
-
-            // foreach (string pagto in clb_CheckedLB.CheckedItems)
-            //     pagtos += " " + pagto;
-
             MessageBox.Show(
-                // $"Nome:> {rtxt_Nome.Text}\n" +
-                // $"Data Nascimento:> {num_Numeric1.Value + "/" + num_Numeric2.Value + "/" + num_Numeric3.Value}\n" +
-                // $"C.P.F.:> {rtxt_Masked.Text}\n" +
-                // $"Dias Devolução:> {cb_Combo.Text}\n" +
-                // $"Tipo CLiente:> {(this.rb_RadioUm.Checked == true ? "CLIENTE BASICO" : this.rb_RadioDois.Checked ? "CLIENTE REGULAR" : this.rb_RadioTres.Checked ? "CLIENTE PREMIUM" : "")}\n" +
-                // $"NewLetter:> {(this.chk_Um.Checked == true ? "SMS -" : "")}" +
-                // $" {(this.chk_Dois.Checked == true ? "E-mail -" : "")}" +
-                // $" {(this.chk_Tres.Checked == true ? "WhatsApp" : "")}\n" +
-                // $"Especial Inicio:> {this.mc_MonthCal.SelectionRange.Start}\n" +
-                // $"Especial Final:> {this.mc_MonthCal.SelectionRange.End}\n" +
-                // $"Data Locação:> {this.dp_DataTP.Value}\n" +
-                $"Filmes:> {filmes}\n" +
-                $"Promoção:> {promocoes}\n" +
-                $"Forma de Pagto:> {pagtos}\n",
-                "Cliente",
+                $"{abaUm.GetInfo()}" +
+                $"{abaDois.GetInfo()}" +
+                $"{abaTres.GetInfo()}" +
                 MessageBoxButtons.OK
             );
         }

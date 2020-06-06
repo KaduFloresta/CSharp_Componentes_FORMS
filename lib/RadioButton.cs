@@ -8,7 +8,7 @@ namespace Library
         public RadioButton()
         {
             this.AutoSize = true;
-            this.Anchor = AnchorStyles.None;
+            this.Anchor = AnchorStyles.Top;
         }
     }
 }
