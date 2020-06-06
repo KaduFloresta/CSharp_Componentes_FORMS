@@ -75,7 +75,7 @@ namespace FormsComponentes
             this.TableLayoutPanel = new TableLayoutPanel();
             this.TableLayoutPanel.BorderStyle = BorderStyle.Fixed3D;
             this.TableLayoutPanel.ColumnCount = 3;
-            this.TableLayoutPanel.RowCount = 10;
+            this.TableLayoutPanel.RowCount = 15;
             this.TableLayoutPanel.Dock = DockStyle.Fill;
             this.TableLayoutPanel.BackColor = ColorTranslator.FromHtml("#8f8caf");
             this.TableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40f));
@@ -92,6 +92,7 @@ namespace FormsComponentes
             this.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
             this.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             this.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
+            this.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             this.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             this.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             this.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
@@ -194,11 +195,11 @@ namespace FormsComponentes
 
             // ComboBox - Seleção Cascata
             this.cb_Combo = new ComboBox();
-            this.cb_Combo.Items.Add("Ítem 1");
-            this.cb_Combo.Items.Add("Ítem 2");
-            this.cb_Combo.Items.Add("Ítem 3");
-            this.cb_Combo.Items.Add("Ítem 4");
-            this.cb_Combo.Items.Add("Ítem 5");
+            this.cb_Combo.Items.Add("Ítem A");
+            this.cb_Combo.Items.Add("Ítem B");
+            this.cb_Combo.Items.Add("Ítem C");
+            this.cb_Combo.Items.Add("Ítem D");
+            this.cb_Combo.Items.Add("Ítem E");
             this.cb_Combo.AutoCompleteMode = AutoCompleteMode.Append;
             this.cb_Combo.ForeColor = Color.Black;
             this.TableLayoutPanel.Controls.Add(this.cb_Combo, 1, 9);
@@ -228,7 +229,7 @@ namespace FormsComponentes
             this.link_help.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkForHelp_LinkClicked);
             this.link_help.Text = "Ajuda com LinkLabel";
             this.TableLayoutPanel.Controls.AddRange(new System.Windows.Forms.Control[] { this.link_help });
-            this.TableLayoutPanel.Controls.Add(this.link_help, 1, 12);
+            this.TableLayoutPanel.Controls.Add(this.link_help, 1, 13);
             this.link_help.Anchor = AnchorStyles.None;
 
             // Label e CheckBox - Múltiplas escolhas

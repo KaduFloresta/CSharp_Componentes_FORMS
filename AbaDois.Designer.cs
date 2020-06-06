@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace FormsComponentes
 {
-    partial class AbaDois
+    public partial class AbaDois
     {
         private IContainer components = null;
         private TableLayoutPanel TableLayoutPanel;

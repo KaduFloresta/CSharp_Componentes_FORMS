@@ -73,5 +73,28 @@ namespace FormsComponentes
                 this.TextError.SetError(this.txt_ErrorBox, String.Empty);
             }
         }
+
+        public string GetInfo()
+        {
+            string filmes = "";
+            string promocoes = "";
+            string pagtos = "";
+
+            foreach (string filme in lb_ListBox.SelectedItems)
+                filmes += " " + filme;
+
+            foreach (ListViewItem promocao in lv_ListView.SelectedItems)
+                promocoes += " " + promocao.Text;
+
+            foreach (string pagto in clb_CheckedLB.CheckedItems)
+                pagtos += " " + pagto;
+
+            return $"ListBox:> {filmes}\n" +
+                    $"ListView:> {promocoes}\n" +
+                    $"CheckedListBox:> {pagtos}\n" +
+                    $"DateTimePicker:> {this.dp_DataTP.Value}\n" +
+                    $"TrackBar:> {this.tb_ExTrackBar.Value}\n" +
+                    $"ErrorProvider:> {this.txt_ErrorBox.Text}\n";
+        }
     }
 }

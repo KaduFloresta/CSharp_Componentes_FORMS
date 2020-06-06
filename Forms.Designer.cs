@@ -13,6 +13,10 @@ namespace FormsComponentes
         private Button btn_Confirmar;
         private Button btn_Cancelar;
 
+        private AbaUm abaUm;
+        private AbaDois abaDois;
+        private AbaTres abaTres;
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -36,9 +40,9 @@ namespace FormsComponentes
             this.tabControl.Location = new Point(0, 20);
 
             // Abas  #1, #2 e #3
-            TabPage abaUm = new AbaUm();
-            TabPage abaDois = new AbaDois();
-            TabPage abaTres = new AbaTres();
+            abaUm = new AbaUm();
+            abaDois = new AbaDois();
+            abaTres = new AbaTres();
 
             // Adicionando Abas
             this.tabControl.Controls.Add(abaUm);
