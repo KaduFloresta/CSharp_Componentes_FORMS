@@ -31,38 +31,40 @@
 FORMS - Interface Creation Activity
 
 1. Controle de contéudo em direção de fluxo X -Y:
-- FlowLayOutPanel.
-- TableLayOutPanel.
+- [X] FlowLayOutPanel.
+- [X] TableLayOutPanel.
 
 
 2. Abas e Menu:
-- TabControl/TabPage.
-- MenuStrip.
+- [X] TabControl/TabPage.
+- [X] MenuStrip.
 
 3. Componentes Básicos:
-- PictureBox.
-- Label.
-- TextBox.
-- RichTextBox.
-- ToolTip.
-- LinkLabel.
-- Buttons.
+- [X] PictureBox.
+- [X] Label.
+- [X] TextBox.
+- [X] RichTextBox.
+- [X] ToolTip.
+- [X] LinkLabel.
+- [X] Buttons.
 
 4. Componentes Seleção:
-- ComboBox.
-- CheckBox.
-- RadioButton.
+- [X] ComboBox.
+- [X] CheckBox.
+- [X] RadioButton.
 
 5. Componentes Numéricos:
-- NumericUpDown.
-- MaskedTextBox.
+- [X] NumericUpDown.
+- [X] MaskedTextBox.
 
 6. Componentes Seleção de Datas:
-- MonthCalendar.
-- DateTimePicker.
+- [X] MonthCalendar.
+- [X] DateTimePicker.
 
 7. Outros Componentes:
-- ProgressBar.
-- TrackBar.
-- OpenDialogFile.
-- ErrorProvider.
+- [X] ProgressBar.
+- [X] TrackBar.
+- [X] OpenDialogFile.
+- [X] ErrorProvider.
+
+---
